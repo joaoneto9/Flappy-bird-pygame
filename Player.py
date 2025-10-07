@@ -9,7 +9,7 @@ class Player:
         self.vel_y = 0
         
     def gravity_decrease_height(self):
-        self.vel_y += 0.08
+        self.vel_y += 0.10
         self.player_pos.y += self.vel_y
     
     def animation(self):

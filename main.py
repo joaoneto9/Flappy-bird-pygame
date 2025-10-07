@@ -1,6 +1,6 @@
 import pygame
 from Player import Player
-from Cano import Cano
+from Block import Block
 
 # name = input("escolha o seu nome: ")
 
@@ -14,8 +14,7 @@ running = True
 
 # iniciando um objeto player
 player = Player("name", screen)
-cano_1 =  Cano(screen, botton=True)
-cano_2 = Cano(screen, botton=False)
+block = Block(screen)
 
 print("inicio do jogo")
 # funcionamento do jogo
@@ -31,8 +30,7 @@ while running:
     screen.fill("black") # não netendi
     
     player.animation()
-    cano_1.animation()
-    cano_2.animation()
+    block.animation()
     
     # pygame.draw.rect(screen, "green", rect)
     
@@ -44,10 +42,7 @@ while running:
     
     # acao da gravidade e atualizacao do eixo x dos canos
     player.gravity_decrease_height()
-    cano_1.walk(dt)
-    cano_2.walk(dt)
-    
-    # Renderizar o Jogo aqui
+    block.walk(dt)
     
     # flip() coloca todo o trabalho na tela
     pygame.display.flip()
