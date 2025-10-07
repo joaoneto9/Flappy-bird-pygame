@@ -44,6 +44,9 @@ while running:
     player.gravity_decrease_height()
     block.walk(dt)
     
+    if player.check_limits() or block.check_player_contact(player.get_cordenates()):
+        running = False
+        
     # flip() coloca todo o trabalho na tela
     pygame.display.flip()
     

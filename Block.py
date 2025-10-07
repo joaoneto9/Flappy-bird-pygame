@@ -42,3 +42,6 @@ class Block:
         self.top_cano.animation()
         self.bottom_cano.animation()
         
+    def check_player_contact(self, cordenates: dict) -> bool:
+        return self.top_cano.check_player_contact(cordenates) or self.bottom_cano.check_player_contact(cordenates)
+        

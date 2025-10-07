@@ -37,3 +37,28 @@ class Cano:
     
     def get_height(self):
         return self.rect.y
+    
+    def get_widht_cordenates(self) -> list:
+        return set(range(self.rect.x, self.rect.x + self.widht))
+    
+    def get_height_cordenates(self) -> list:
+        return set(range(self.rect.y, self.rect.y + self.rect.height))
+    
+    def check_player_contact(self, cordenates: dict) -> bool:
+        widht_cordenates = self.get_widht_cordenates()
+        at_x = False
+        
+        for cord in cordenates["x"]:
+            if cord in widht_cordenates:
+                at_x = True;
+        
+        if not at_x:
+            return False
+            
+        height_cordenates = self.get_height_cordenates()
+        for cord in cordenates["y"]:
+            if cord in height_cordenates:
+                return True
+        
+        return False
+    
