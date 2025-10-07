@@ -14,8 +14,8 @@ running = True
 
 # iniciando um objeto player
 player = Player("name", screen)
-cano_1 =  Cano(screen, True)
-# Cria um retângulo (x, y, largura, altura)
+cano_1 =  Cano(screen, botton=True)
+cano_2 = Cano(screen, botton=False)
 
 print("inicio do jogo")
 # funcionamento do jogo
@@ -32,6 +32,7 @@ while running:
     
     player.animation()
     cano_1.animation()
+    cano_2.animation()
     
     # pygame.draw.rect(screen, "green", rect)
     
@@ -44,6 +45,7 @@ while running:
     # acao da gravidade e atualizacao do eixo x dos canos
     player.gravity_decrease_height()
     cano_1.walk(dt)
+    cano_2.walk(dt)
     
     # Renderizar o Jogo aqui
     
